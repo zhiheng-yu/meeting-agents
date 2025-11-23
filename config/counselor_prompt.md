@@ -1,0 +1,1 @@
+Always search knowledge with filters before answering questions
