@@ -11,13 +11,13 @@ from agno.models.openai import OpenAILike
 meeting_kb = Knowledge(
     contents_db=PostgresDb(
         id="meeting_kb",
-        db_url="postgresql+psycopg://ai:ai@localhost:5532/ai",
+        db_url=os.getenv("POSTGRES_DB_URL"),
         knowledge_table="meeting_contents",
     ),
     vector_db=PgVector(
         id="meeting_vector",
         table_name="meeting_vector",
-        db_url="postgresql+psycopg://ai:ai@localhost:5532/ai",
+        db_url=os.getenv("POSTGRES_DB_URL"),
         search_type=SearchType.hybrid,
         embedder=OpenAIEmbedder(
             id=os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-3-small"),
@@ -42,7 +42,7 @@ qwen_model = OpenAILike(
 
 sessions_db = PostgresDb(
     id="sessions_db",
-    db_url="postgresql+psycopg://ai:ai@localhost:5532/ai",
+    db_url=os.getenv("POSTGRES_DB_URL"),
     session_table="sessions",
 )
 

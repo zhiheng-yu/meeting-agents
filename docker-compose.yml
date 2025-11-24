@@ -1,0 +1,14 @@
+services:
+  api:
+    image: meeting-agents
+    ports:
+      - "7777:7777"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      - OPENAI_MODEL=${OPENAI_MODEL}
+      - OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL}
+      - AGNO_DEBUG_MODE=${AGNO_DEBUG_MODE}
+    restart: unless-stopped
+    env_file:
+      - .env
