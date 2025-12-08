@@ -56,8 +56,7 @@ counselor_agent = Agent(
     knowledge=meeting_kb,
     search_knowledge=True,
     instructions=[system_prompt],
-    enable_agentic_knowledge_filters=True,
-    debug_mode=os.getenv("AGNO_DEBUG_MODE", False),
+    enable_agentic_knowledge_filters=True
 )
 
 # Chat with your agent

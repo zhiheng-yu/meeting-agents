@@ -24,8 +24,7 @@ summary_agent = Agent(
     model=qwen_model,
     name="summary_agent",
     description="A summary agent that summarizes the meeting",
-    instructions=[system_prompt],
-    debug_mode=os.getenv("AGNO_DEBUG_MODE", False),
+    instructions=[system_prompt]
 )
 
 if __name__ == '__main__':
